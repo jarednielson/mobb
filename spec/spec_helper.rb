@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'mobb'
+
+file_path = File.join(__dir__, '..', 'lib', '**', '*.rb')
+Dir[file_path].sort.each { |file| require file }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
