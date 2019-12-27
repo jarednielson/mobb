@@ -11,3 +11,8 @@
 .rspec_status
 
 Gemfile.lock
+
+# workspace configurations
+.idea
+*.code-workspace
+.vscode
