@@ -3,6 +3,10 @@
 require 'spec_helper'
 
 RSpec.describe Mobb::Services::MobManager do
+  it 'has default roles' do
+    expect(described_class::DEFAULT_ROLES).to match_array %i[driver navigator mobber]
+  end
+
   describe '#roles' do
     subject { described_class.new.roles }
 
