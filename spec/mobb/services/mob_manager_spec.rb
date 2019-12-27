@@ -7,7 +7,7 @@ RSpec.describe Mobb::Services::MobManager do
     subject { described_class.new.roles }
 
     it 'has driver, navigator, mobber' do
-      expect(subject).to match_array %w[driver navigator mobber]
+      expect(subject).to match_array %i[driver navigator mobber]
     end
   end
 end

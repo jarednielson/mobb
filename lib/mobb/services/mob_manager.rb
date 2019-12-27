@@ -4,7 +4,7 @@ module Mobb
   module Services
     class MobManager
       def roles
-        @roles ||= %w[driver navigator mobber]
+        @roles ||= %i[driver navigator mobber]
       end
     end
   end
