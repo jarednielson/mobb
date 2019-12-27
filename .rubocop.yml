@@ -1,0 +1,5 @@
+Layout/LineLength:
+  IgnoredPatterns: [("|').*("|'), \#.*$]
+
+Style/Documentation:
+  Enabled: false
