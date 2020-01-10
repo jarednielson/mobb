@@ -8,10 +8,30 @@ RSpec.describe Mobb::Services::MobManager do
   end
 
   describe '#roles' do
-    subject { described_class.new.roles }
+    context 'when roles are not given' do
+      subject { described_class.new.roles }
 
-    it 'has driver, navigator, mobber' do
-      expect(subject).to match_array %i[driver navigator mobber]
+      it 'has driver, navigator, mobber' do
+        expect(subject).to match_array %i[driver navigator mobber]
+      end
+    end
+
+    context 'when roles are given' do
+      let(:roles) { %i[driver navigator slacker] }
+      subject { described_class.new(roles: roles).roles }
+
+      it 'uses the given roles' do
+        expect(subject).to match_array roles
+      end
+    end
+  end
+
+  describe '#mobbers' do
+    let(:mobbers) { %i[Jeff Jared Andy] }
+    subject { described_class.new(mobbers: mobbers).mobbers }
+
+    it 'has mobbers' do
+      expect(subject).to match_array mobbers
     end
   end
 end
