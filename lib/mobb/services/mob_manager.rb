@@ -4,13 +4,11 @@ module Mobb
   module Services
     class MobManager
       DEFAULT_ROLES = %i[driver navigator mobber].freeze
+      attr_reader :roles, :mobbers
 
-      def initialize(roles: DEFAULT_ROLES)
+      def initialize(mobbers:, roles: DEFAULT_ROLES)
         @roles = roles
-      end
-
-      def roles
-        @roles ||= DEFAULT_ROLES
+        @mobbers = mobbers
       end
     end
   end
